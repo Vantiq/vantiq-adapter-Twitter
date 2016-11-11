@@ -1,0 +1,8 @@
+PROCEDURE Control_Twitter_PostTweet(body, shortenURLs)
+
+var payload = {
+    body: body,
+    shortenURLs: shortenURLs
+}
+
+Connector_SendAction('Twitter', 'PostTweet', [payload]);

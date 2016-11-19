@@ -5,4 +5,4 @@ var payload = {
     shortenURLs: shortenURLs
 }
 
-Connector_SendAction("Twitter", "PostTweet", [payload])
+Adapter_SendAction("Twitter", "PostTweet", [payload])

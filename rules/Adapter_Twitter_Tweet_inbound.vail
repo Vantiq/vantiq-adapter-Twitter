@@ -1,15 +1,14 @@
 RULE Adapter_Twitter_Tweet_inbound
 
 //--------------------------------------------------------
-// Listen for data on "/system/adapter/<type>/inbound" topic
+// Listen for data on "/system/adapter/inbound/<type>" topic
 //--------------------------------------------------------
-WHEN PUBLISH OCCURS ON "/system/adapter/Twitter_Tweet/inbound" AS m
+WHEN PUBLISH OCCURS ON "/system/adapter/inbound/Twitter_Tweet" AS m
 
 //--------------------------------------------------------
 // Perform any data tranformations
 //--------------------------------------------------------
 var obj = m.newValue
-var key = obj.id
 
 // Parse Twitter Date Strings into real DateTime values
 var TWITTER_DATE_FORMAT = "EEE MMM dd HH:mm:ss Z yyyy"
